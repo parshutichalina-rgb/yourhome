@@ -1,0 +1,12 @@
+# Local architecture, specifications, tasks, and Memory Bank.
+info/
+
+# Environment-specific configuration and secrets.
+.env
+.env.*
+!.env.example
+
+# Local editor and operating-system files.
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,35 @@
+:root {
+  --wp--style--global--content-size: 760px;
+  --wp--style--global--wide-size: 1200px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+.yourhome-page-title {
+  text-wrap: balance;
+}
+
+.yourhome-page-content img {
+  height: auto;
+  max-width: 100%;
+}
+
+.wp-site-blocks {
+  min-height: 100vh;
+}

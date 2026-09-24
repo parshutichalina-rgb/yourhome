@@ -1,0 +1,15 @@
+.wp-block-yourhome-section {
+  padding: clamp(2.5rem, 6vw, 5rem) 1.5rem;
+}
+
+.yourhome-section__inner {
+  margin: 0 auto;
+  max-width: var(--wp--style--global--wide-size);
+}
+
+.yourhome-section__heading {
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  line-height: 1.15;
+  margin: 0 0 1.5rem;
+  text-wrap: balance;
+}
