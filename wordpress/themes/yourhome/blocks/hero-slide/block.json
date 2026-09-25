@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "yourhome/hero-slide",
+  "version": "1.3.2",
+  "title": "YourHome Hero Slide",
+  "category": "design",
+  "icon": "format-image",
+  "description": "One media-rich slide inside a YourHome Hero.",
+  "parent": ["yourhome/hero"],
+  "textdomain": "yourhome",
+  "attributes": {
+    "imageId": { "type": "number" },
+    "imageUrl": { "type": "string", "default": "" },
+    "imageAlt": { "type": "string", "default": "" },
+    "eyebrow": { "type": "string", "default": "Find your next home" },
+    "heading": { "type": "string", "default": "A better way to discover property" },
+    "content": { "type": "string", "default": "Explore homes with clear details and a focused search experience." },
+    "buttonLabel": { "type": "string", "default": "Browse properties" },
+    "buttonUrl": { "type": "string", "default": "#properties" },
+    "textAlign": { "type": "string", "default": "left" },
+    "contentPosition": { "type": "string", "default": "center-left" },
+    "overlayColor": { "type": "string", "default": "#183249" },
+    "overlayOpacity": { "type": "number", "default": 78 },
+    "accentColor": { "type": "string", "default": "#eee9df" },
+    "buttonBackgroundColor": { "type": "string", "default": "#f7f6f2" },
+    "buttonTextColor": { "type": "string", "default": "#183249" }
+  },
+  "supports": {
+    "html": false,
+    "reusable": false,
+    "color": { "background": true, "text": true },
+    "spacing": { "padding": true }
+  },
+  "style": "file:./style.css",
+  "editorStyle": "file:./editor.css"
+}

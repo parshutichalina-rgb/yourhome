@@ -9,6 +9,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+require_once get_stylesheet_directory() . '/inc/layouts.php';
+require_once get_stylesheet_directory() . '/inc/customizer.php';
+require_once get_stylesheet_directory() . '/inc/hero.php';
+
 add_action(
 	'after_setup_theme',
 	static function (): void {
@@ -37,21 +41,33 @@ add_action(
 add_action(
 	'enqueue_block_editor_assets',
 	static function (): void {
-		$path = get_stylesheet_directory() . '/assets/js/blocks.js';
-
-		wp_enqueue_script(
-			'yourhome-theme-blocks',
-			get_stylesheet_directory_uri() . '/assets/js/blocks.js',
-			array( 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-element', 'wp-i18n' ),
-			file_exists( $path ) ? (string) filemtime( $path ) : null,
-			true
+		$scripts = array(
+			'yourhome-theme-blocks' => 'assets/js/blocks.js',
+			'yourhome-layout-blocks' => 'assets/js/layout-blocks.js',
+			'yourhome-hero-blocks' => 'assets/js/hero-blocks.js',
 		);
+
+		foreach ( $scripts as $handle => $relative_path ) {
+			$path = get_stylesheet_directory() . '/' . $relative_path;
+
+			wp_enqueue_script(
+				$handle,
+				get_stylesheet_directory_uri() . '/' . $relative_path,
+				array( 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-element', 'wp-i18n' ),
+				file_exists( $path ) ? (string) filemtime( $path ) : null,
+				true
+			);
+		}
 	}
 );
 
 add_action(
-	'wp_enqueue_scripts',
+	'enqueue_block_assets',
 	static function (): void {
+		if ( is_admin() ) {
+			return;
+		}
+
 		$path = get_stylesheet_directory() . '/assets/presentation.css';
 
 		wp_enqueue_style(
@@ -62,3 +78,5 @@ add_action(
 		);
 	}
 );
+
+add_action( 'customize_register', 'yourhome_register_customizer' );

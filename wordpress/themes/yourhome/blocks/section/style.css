@@ -1,15 +1,33 @@
 .wp-block-yourhome-section {
-  padding: clamp(2.5rem, 6vw, 5rem) 1.5rem;
+  margin-block: 0;
+  padding: var(--yourhome-section-space, clamp(2.5rem, 5vw, 4.5rem)) var(--yourhome-gutter, clamp(1rem, 2.5vw, 2rem));
 }
+
+.wp-block-yourhome-section:not(.has-background) { background: transparent; }
 
 .yourhome-section__inner {
   margin: 0 auto;
   max-width: var(--wp--style--global--wide-size);
 }
 
+.wp-block-yourhome-section:not(.has-text-color) .yourhome-section__heading { color: var(--wp--preset--color--ink, #17212b); }
+
 .yourhome-section__heading {
-  font-size: clamp(1.75rem, 4vw, 3rem);
-  line-height: 1.15;
-  margin: 0 0 1.5rem;
+  font-family: var(--wp--preset--font-family--display, Georgia, serif);
+  font-size: clamp(1.9rem, 4vw, 3.25rem);
+  letter-spacing: -0.02em;
+  line-height: 1.08;
+  margin: 0 0 1.15rem;
+  max-width: 20ch;
   text-wrap: balance;
 }
+
+.wp-block-yourhome-section.has-background,
+.wp-block-yourhome-section.is-style-glass:not(.has-background),
+.wp-block-yourhome-section.is-style-outline:not(.has-background) {
+  border: 1px solid var(--wp--preset--color--border, #d8dee2);
+  border-radius: var(--wp--custom--radius--large, 0.5rem);
+}
+
+.wp-block-yourhome-section.is-style-glass:not(.has-background) { background: var(--wp--preset--color--surface, #fff); }
+.wp-block-yourhome-section.is-style-aurora:not(.has-background) { background: #eef1ed; }

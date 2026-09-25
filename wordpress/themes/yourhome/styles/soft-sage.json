@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Soft Sage",
+  "settings": {
+    "color": {
+      "palette": [
+        { "name": "Ink", "slug": "ink", "color": "#24332E" },
+        { "name": "Navy", "slug": "navy", "color": "#29443E" },
+        { "name": "Estate Green", "slug": "evergreen", "color": "#557568" },
+        { "name": "Sage", "slug": "sage", "color": "#91A99F" },
+        { "name": "Ochre", "slug": "amber", "color": "#AA8250" },
+        { "name": "Sand", "slug": "sand", "color": "#EDE9DF" },
+        { "name": "Slate Blue", "slug": "ultramarine", "color": "#607884" },
+        { "name": "Muted Plum", "slug": "electric-purple", "color": "#7C7078" },
+        { "name": "Muted Teal", "slug": "aqua-glow", "color": "#6C8583" },
+        { "name": "Canvas", "slug": "canvas", "color": "#F3F5F1" },
+        { "name": "Surface", "slug": "surface", "color": "#FFFFFF" },
+        { "name": "Muted", "slug": "muted", "color": "#687771" },
+        { "name": "Border", "slug": "border", "color": "#D5DDD8" },
+        { "name": "Success", "slug": "success", "color": "#4F735F" },
+        { "name": "Error", "slug": "error", "color": "#A95858" },
+        { "name": "Foreground", "slug": "foreground", "color": "#24332E" },
+        { "name": "Background", "slug": "background", "color": "#F3F5F1" },
+        { "name": "Brand", "slug": "brand", "color": "#557568" },
+        { "name": "Accent", "slug": "accent", "color": "#AA8250" }
+      ]
+    }
+  },
+  "styles": {
+    "color": { "background": "#F3F5F1", "text": "#24332E" },
+    "elements": {
+      "button": { "color": { "background": "#557568", "text": "#FFFFFF" } },
+      "link": { "color": { "text": "#557568" } }
+    }
+  }
+}

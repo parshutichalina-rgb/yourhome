@@ -1,3 +1,3 @@
-.wp-block-yourhome-hero .block-editor-rich-text__editable {
-  color: inherit;
-}
+.wp-block-yourhome-hero .block-editor-block-list__layout { display: grid; }
+.wp-block-yourhome-hero .wp-block-yourhome-hero-slide { grid-area: auto; }
+.wp-block-yourhome-hero .block-list-appender { align-self: end; grid-area: auto; margin: 1rem; position: relative; z-index: 4; }

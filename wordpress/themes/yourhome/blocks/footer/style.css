@@ -1,0 +1,51 @@
+.wp-block-yourhome-footer {
+  --yourhome-footer-local-background: var(--yourhome-footer-background, var(--wp--preset--color--navy, #183249));
+  --yourhome-footer-local-text: var(--yourhome-footer-text, #fff);
+  --yourhome-footer-local-accent: var(--yourhome-footer-accent, var(--wp--preset--color--sand, #eee9df));
+  border-top: 1px solid var(--yourhome-footer-border, #29495d);
+  margin: 0;
+  max-width: none;
+  padding: clamp(1.5rem, 3vw, 2.5rem) var(--yourhome-gutter, clamp(1rem, 2.5vw, 2rem));
+  width: 100%;
+}
+
+.wp-block-yourhome-footer:not(.has-background) { background: var(--yourhome-footer-local-background); }
+.wp-block-yourhome-footer:not(.has-text-color) { color: var(--yourhome-footer-local-text); }
+
+.yourhome-footer__inner {
+  margin-inline: auto;
+  max-width: var(--wp--style--global--wide-size, 1280px);
+  width: 100%;
+}
+
+.yourhome-footer__inner :where(h2, h3, h4, p) { margin-block: 0 0.65rem; }
+.wp-block-yourhome-footer :where(.wp-block-heading, .wp-block-site-title) { color: inherit; }
+.wp-block-yourhome-footer:not(.has-link-color) a { color: inherit; }
+
+.wp-block-yourhome-footer:not(.has-link-color) a:hover,
+.wp-block-yourhome-footer:not(.has-link-color) a:focus-visible { color: var(--yourhome-footer-local-accent); }
+
+.wp-block-yourhome-footer.has-link-color a:hover,
+.wp-block-yourhome-footer.has-link-color a:focus-visible { opacity: 0.78; }
+
+.wp-block-yourhome-footer.is-style-minimal {
+  --yourhome-footer-local-background: var(--wp--preset--color--canvas, #f7f6f2);
+  --yourhome-footer-local-text: var(--wp--preset--color--muted, #66737c);
+}
+
+.wp-block-yourhome-footer.is-style-brand {
+  --yourhome-footer-local-background: var(--wp--preset--color--evergreen, #496b5c);
+  --yourhome-footer-local-text: #fff;
+}
+
+.wp-block-yourhome-footer.is-style-dark {
+  --yourhome-footer-local-background: var(--wp--preset--color--ink, #17212b);
+  --yourhome-footer-local-text: #fff;
+}
+
+.wp-block-yourhome-footer.is-style-glass {
+  --yourhome-footer-local-background: var(--wp--preset--color--surface, #fff);
+  --yourhome-footer-local-text: var(--wp--preset--color--ink, #17212b);
+  --yourhome-footer-local-accent: var(--wp--preset--color--evergreen, #496b5c);
+  --yourhome-footer-border: var(--wp--preset--color--border, #d8dee2);
+}

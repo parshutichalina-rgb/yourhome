@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "yourhome/header",
+  "version": "1.3.1",
+  "title": "YourHome Header",
+  "category": "design",
+  "icon": "align-wide",
+  "description": "A customizable header that can be placed on the page selected in Customize.",
+  "textdomain": "yourhome",
+  "supports": {
+    "align": ["wide", "full"],
+    "anchor": true,
+    "html": false,
+    "color": { "background": true, "text": true, "link": true },
+    "spacing": { "margin": true, "padding": true }
+  },
+  "styles": [
+    { "name": "default", "label": "Professional", "isDefault": true },
+    { "name": "minimal", "label": "Minimal" },
+    { "name": "brand", "label": "Brand" },
+    { "name": "dark", "label": "Dark" },
+    { "name": "aurora", "label": "Bordered" }
+  ],
+  "style": "file:./style.css",
+  "editorStyle": "file:./editor.css"
+}

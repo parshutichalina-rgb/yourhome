@@ -4,36 +4,119 @@
   "settings": {
     "appearanceTools": true,
     "color": {
+      "custom": true,
+      "customDuotone": false,
+      "customGradient": true,
+      "defaultPalette": false,
       "palette": [
-        { "slug": "foreground", "name": "Foreground", "color": "#111827" },
-        { "slug": "background", "name": "Background", "color": "#ffffff" },
-        { "slug": "brand", "name": "Brand", "color": "#0f5132" },
-        { "slug": "accent", "name": "Accent", "color": "#f59e0b" },
-        { "slug": "surface", "name": "Surface", "color": "#f8fafc" }
+        { "slug": "ink", "name": "Ink", "color": "#17212B" },
+        { "slug": "navy", "name": "Deep Navy", "color": "#183249" },
+        { "slug": "evergreen", "name": "Estate Green", "color": "#496B5C" },
+        { "slug": "sage", "name": "Sage", "color": "#8CA79B" },
+        { "slug": "amber", "name": "Warm Ochre", "color": "#B8894A" },
+        { "slug": "sand", "name": "Warm Sand", "color": "#EEE9DF" },
+        { "slug": "canvas", "name": "Warm White", "color": "#F7F6F2" },
+        { "slug": "surface", "name": "White", "color": "#FFFFFF" },
+        { "slug": "muted", "name": "Slate", "color": "#66737C" },
+        { "slug": "border", "name": "Border", "color": "#D8DEE2" },
+        { "slug": "success", "name": "Success", "color": "#3F765A" },
+        { "slug": "error", "name": "Error", "color": "#A64B4B" },
+        { "slug": "ultramarine", "name": "Slate Blue", "color": "#536D82" },
+        { "slug": "electric-purple", "name": "Muted Plum", "color": "#746775" },
+        { "slug": "aqua-glow", "name": "Muted Teal", "color": "#64858A" },
+        { "slug": "foreground", "name": "Legacy Foreground", "color": "#17212B" },
+        { "slug": "background", "name": "Legacy Background", "color": "#F7F6F2" },
+        { "slug": "brand", "name": "Legacy Brand", "color": "#496B5C" },
+        { "slug": "accent", "name": "Legacy Accent", "color": "#B8894A" }
+      ],
+      "gradients": [
+        { "slug": "estate-dusk", "name": "Estate Navy", "gradient": "linear-gradient(135deg, #183249 0%, #29495D 100%)" },
+        { "slug": "warm-listing", "name": "Warm Neutral", "gradient": "linear-gradient(135deg, #F7F6F2 0%, #EEE9DF 100%)" },
+        { "slug": "city-night", "name": "Charcoal Navy", "gradient": "linear-gradient(135deg, #17212B 0%, #183249 100%)" },
+        { "slug": "mesh-aurora", "name": "Soft Sage", "gradient": "linear-gradient(135deg, #F7F6F2 0%, #E4ECE7 100%)" }
       ]
     },
     "layout": {
-      "contentSize": "760px",
-      "wideSize": "1200px"
+      "contentSize": "800px",
+      "wideSize": "1280px"
+    },
+    "shadow": {
+      "defaultPresets": false,
+      "presets": [
+        { "slug": "soft", "name": "Soft", "shadow": "0 2px 10px rgba(23, 33, 43, 0.06)" },
+        { "slug": "card", "name": "Card", "shadow": "0 6px 20px rgba(23, 33, 43, 0.08)" },
+        { "slug": "floating", "name": "Elevated", "shadow": "0 12px 32px rgba(23, 33, 43, 0.12)" }
+      ]
     },
     "spacing": {
+      "blockGap": true,
+      "customSpacingSize": true,
+      "defaultSpacingSizes": false,
+      "spacingSizes": [
+        { "slug": "20", "name": "2XS", "size": "0.5rem" },
+        { "slug": "30", "name": "XS", "size": "0.75rem" },
+        { "slug": "40", "name": "S", "size": "1rem" },
+        { "slug": "50", "name": "M", "size": "1.25rem" },
+        { "slug": "60", "name": "L", "size": "1.75rem" },
+        { "slug": "70", "name": "XL", "size": "clamp(2.25rem, 4vw, 3.75rem)" },
+        { "slug": "80", "name": "2XL", "size": "clamp(3.25rem, 7vw, 6rem)" }
+      ],
       "units": ["px", "rem", "em", "%", "vw", "vh"]
     },
     "typography": {
-      "fluid": true
+      "customFontSize": true,
+      "fluid": true,
+      "fontFamilies": [
+        { "slug": "sans", "name": "YourHome Sans", "fontFamily": "Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif" },
+        { "slug": "display", "name": "YourHome Display", "fontFamily": "Iowan Old Style, Baskerville, \"Times New Roman\", serif" }
+      ],
+      "fontSizes": [
+        { "slug": "small", "name": "Small", "size": "0.875rem" },
+        { "slug": "medium", "name": "Body", "size": "1rem" },
+        { "slug": "large", "name": "Lead", "size": "clamp(1.125rem, 1.4vw, 1.25rem)" },
+        { "slug": "x-large", "name": "Heading", "size": "clamp(1.75rem, 3.5vw, 2.75rem)" },
+        { "slug": "hero", "name": "Hero", "size": "clamp(2.5rem, 6vw, 4.5rem)" }
+      ]
+    },
+    "custom": {
+      "radius": { "small": "0.25rem", "medium": "0.375rem", "large": "0.5rem", "pill": "0.25rem" },
+      "transition": { "fast": "160ms ease", "normal": "260ms ease" }
     }
   },
   "styles": {
-    "color": {
-      "background": "#ffffff",
-      "text": "#111827"
+    "color": { "background": "var:preset|color|canvas", "text": "var:preset|color|ink" },
+    "spacing": { "blockGap": "var:preset|spacing|40" },
+    "typography": { "fontFamily": "var:preset|font-family|sans", "fontSize": "var:preset|font-size|medium", "lineHeight": "1.6" },
+    "elements": {
+      "button": {
+        "border": { "radius": "var:custom|radius|pill" },
+        "color": { "background": "var:preset|color|evergreen", "text": "var:preset|color|surface" },
+        "spacing": { "padding": { "top": "0.8rem", "right": "1.25rem", "bottom": "0.8rem", "left": "1.25rem" } },
+        "typography": { "fontSize": "0.9375rem", "fontWeight": "700", "lineHeight": "1.2" }
+      },
+      "caption": { "color": { "text": "var:preset|color|muted" }, "typography": { "fontSize": "var:preset|font-size|small" } },
+      "h1": { "typography": { "fontFamily": "var:preset|font-family|display", "fontSize": "var:preset|font-size|hero", "fontWeight": "600", "letterSpacing": "-0.035em", "lineHeight": "1.02" } },
+      "h2": { "typography": { "fontFamily": "var:preset|font-family|display", "fontSize": "var:preset|font-size|x-large", "fontWeight": "600", "letterSpacing": "-0.025em", "lineHeight": "1.1" } },
+      "h3": { "typography": { "fontFamily": "var:preset|font-family|display", "fontSize": "1.65rem", "fontWeight": "600", "lineHeight": "1.2" } },
+      "h4": { "typography": { "fontSize": "1.2rem", "fontWeight": "700", "lineHeight": "1.3" } },
+      "link": { "color": { "text": "var:preset|color|evergreen" }, "typography": { "textDecoration": "none" } }
     },
-    "spacing": {
-      "blockGap": "1.5rem"
-    },
-    "typography": {
-      "fontFamily": "system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", sans-serif",
-      "lineHeight": "1.6"
+    "blocks": {
+      "core/button": { "border": { "radius": "var:custom|radius|pill" }, "shadow": "var:preset|shadow|soft" },
+      "core/code": { "border": { "color": "var:preset|color|border", "radius": "var:custom|radius|small", "width": "1px" }, "color": { "background": "var:preset|color|surface", "text": "var:preset|color|ink" }, "spacing": { "padding": "var:preset|spacing|40" } },
+      "core/cover": { "border": { "radius": "var:custom|radius|large" }, "spacing": { "padding": "var:preset|spacing|50" } },
+      "core/details": { "border": { "color": "var:preset|color|border", "radius": "var:custom|radius|medium", "width": "1px" }, "color": { "background": "var:preset|color|surface" }, "spacing": { "padding": "var:preset|spacing|40" } },
+      "core/image": { "border": { "radius": "var:custom|radius|medium" } },
+      "core/navigation": { "typography": { "fontSize": "0.9375rem", "fontWeight": "650" } },
+      "core/post-date": { "color": { "text": "var:preset|color|muted" }, "typography": { "fontSize": "var:preset|font-size|small" } },
+      "core/post-excerpt": { "color": { "text": "var:preset|color|muted" } },
+      "core/post-title": { "typography": { "fontFamily": "var:preset|font-family|display", "fontWeight": "600", "lineHeight": "1.15" } },
+      "core/pullquote": { "border": { "color": "var:preset|color|amber" }, "color": { "text": "var:preset|color|ink" }, "typography": { "fontFamily": "var:preset|font-family|display", "fontSize": "var:preset|font-size|large" } },
+      "core/quote": { "border": { "color": "var:preset|color|evergreen", "width": "0 0 0 4px" }, "color": { "background": "var:preset|color|surface" }, "spacing": { "padding": { "top": "var:preset|spacing|40", "right": "var:preset|spacing|50", "bottom": "var:preset|spacing|40", "left": "var:preset|spacing|50" } } },
+      "core/search": { "border": { "radius": "var:custom|radius|pill" } },
+      "core/separator": { "color": { "background": "var:preset|color|border" } },
+      "core/site-title": { "typography": { "fontFamily": "var:preset|font-family|display", "fontSize": "1.5rem", "fontWeight": "700", "letterSpacing": "-0.02em" } },
+      "core/table": { "border": { "color": "var:preset|color|border" } }
     }
   },
   "templateParts": [

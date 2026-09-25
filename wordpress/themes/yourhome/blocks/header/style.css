@@ -1,0 +1,49 @@
+.wp-block-yourhome-header {
+  --yourhome-header-local-background: var(--yourhome-header-background, var(--wp--preset--color--surface, #fff));
+  --yourhome-header-local-text: var(--yourhome-header-text, var(--wp--preset--color--ink, #17212b));
+  --yourhome-header-local-accent: var(--yourhome-header-accent, var(--wp--preset--color--evergreen, #496b5c));
+  border-bottom: 1px solid var(--yourhome-header-border, var(--wp--preset--color--border, #d8dee2));
+  margin: 0;
+  max-width: none;
+  padding: 0.65rem var(--yourhome-gutter, clamp(1rem, 2.5vw, 2rem));
+  width: 100%;
+}
+
+.wp-block-yourhome-header:not(.has-background) { background: var(--yourhome-header-local-background); }
+.wp-block-yourhome-header:not(.has-text-color) { color: var(--yourhome-header-local-text); }
+
+.yourhome-header__inner {
+  margin-inline: auto;
+  max-width: var(--wp--style--global--wide-size, 1280px);
+  width: 100%;
+}
+
+.yourhome-header__inner > .wp-block-group { min-height: 3rem; }
+.wp-block-yourhome-header:not(.has-link-color) a { color: inherit; }
+
+.wp-block-yourhome-header:not(.has-link-color) a:hover,
+.wp-block-yourhome-header:not(.has-link-color) a:focus-visible { color: var(--yourhome-header-local-accent); }
+
+.wp-block-yourhome-header.has-link-color a:hover,
+.wp-block-yourhome-header.has-link-color a:focus-visible { opacity: 0.78; }
+
+.wp-block-yourhome-header .wp-block-button__link:not(.has-background) { background: var(--yourhome-header-local-accent); }
+.wp-block-yourhome-header .wp-block-button__link:not(.has-text-color) { color: #fff; }
+.wp-block-yourhome-header .wp-block-site-title { color: inherit; margin: 0; }
+.wp-block-yourhome-header .wp-block-navigation { gap: 1.25rem; }
+
+.wp-block-yourhome-header.is-style-minimal { border-bottom-color: transparent; }
+
+.wp-block-yourhome-header.is-style-brand {
+  --yourhome-header-local-background: var(--wp--preset--color--evergreen, #496b5c);
+  --yourhome-header-local-text: #fff;
+  --yourhome-header-local-accent: var(--wp--preset--color--sand, #eee9df);
+}
+
+.wp-block-yourhome-header.is-style-dark {
+  --yourhome-header-local-background: var(--wp--preset--color--navy, #183249);
+  --yourhome-header-local-text: #fff;
+  --yourhome-header-local-accent: var(--wp--preset--color--sand, #eee9df);
+}
+
+.wp-block-yourhome-header.is-style-aurora:not(.has-background) { background: #f0f2ef; }

@@ -1,0 +1,122 @@
+.wp-block-yourhome-hero-slide {
+  display: grid;
+  grid-area: 1 / 1;
+  margin-block: 0;
+  min-height: clamp(29rem, 68vh, 43rem);
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: relative;
+  transition: opacity 500ms ease, transform 500ms ease;
+  visibility: hidden;
+}
+
+.wp-block-yourhome-hero-slide:not(.has-background) { background: var(--wp--preset--color--navy, #183249); }
+.wp-block-yourhome-hero-slide:not(.has-text-color) { color: #fff; }
+
+.wp-block-yourhome-hero-slide.is-active {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  z-index: 1;
+}
+
+.yourhome-hero-slide__media,
+.yourhome-hero-slide__overlay,
+.yourhome-hero-slide__content {
+  grid-area: 1 / 1;
+  height: 100%;
+  width: 100%;
+}
+
+.yourhome-hero-slide__media { object-fit: cover; }
+
+.yourhome-hero-slide__overlay {
+  background: var(--yourhome-slide-overlay-color, #183249);
+  opacity: var(--yourhome-slide-overlay-opacity, 0.72);
+}
+
+.yourhome-hero-slide__content {
+  align-items: flex-start;
+  align-self: stretch;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-inline: auto;
+  max-width: none;
+  padding-block: clamp(3.5rem, 7vw, 6rem);
+  padding-inline: 0;
+  position: relative;
+  text-align: var(--yourhome-slide-align, left);
+  width: min(calc(100% - var(--yourhome-gutter, 1rem) - var(--yourhome-gutter, 1rem)), var(--wp--style--global--wide-size, 1280px));
+  z-index: 1;
+}
+
+.wp-block-yourhome-hero-slide:not([class*="is-position-"]) .yourhome-hero-slide__content { align-items: center; }
+.wp-block-yourhome-hero-slide:is(.is-position-top-left, .is-position-top-center, .is-position-top-right) .yourhome-hero-slide__content { justify-content: flex-start; }
+
+.wp-block-yourhome-hero-slide:is(.is-position-bottom-left, .is-position-bottom-center, .is-position-bottom-right) .yourhome-hero-slide__content {
+  justify-content: flex-end;
+  padding-bottom: clamp(5.5rem, 9vw, 7rem);
+}
+
+.wp-block-yourhome-hero-slide:is(.is-position-top-left, .is-position-center-left, .is-position-bottom-left) .yourhome-hero-slide__content { align-items: flex-start; }
+.wp-block-yourhome-hero-slide:is(.is-position-top-center, .is-position-center, .is-position-bottom-center) .yourhome-hero-slide__content { align-items: center; }
+.wp-block-yourhome-hero-slide:is(.is-position-top-right, .is-position-center-right, .is-position-bottom-right) .yourhome-hero-slide__content { align-items: flex-end; }
+
+.yourhome-hero-slide__eyebrow,
+.yourhome-hero-slide__heading,
+.yourhome-hero-slide__body {
+  max-width: min(100%, 42rem);
+  width: fit-content;
+}
+
+.yourhome-hero-slide__eyebrow {
+  color: var(--yourhome-slide-accent, #eee9df);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 0 0 0.75rem;
+  max-width: 100%;
+  text-transform: uppercase;
+}
+
+.yourhome-hero-slide__heading {
+  color: inherit;
+  font-size: clamp(2.5rem, 5.5vw, 4.75rem);
+  letter-spacing: -0.025em;
+  line-height: 1.02;
+  margin: 0 0 1rem;
+  max-width: min(100%, 12ch);
+  text-wrap: balance;
+}
+
+.yourhome-hero-slide__body {
+  color: inherit;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.6;
+  margin: 0 0 1.5rem;
+  max-width: min(100%, 38rem);
+}
+
+.yourhome-hero-slide__button {
+  background: var(--yourhome-slide-button-background, #f7f6f2);
+  border: 1px solid transparent;
+  border-radius: var(--wp--custom--radius--small, 0.25rem);
+  color: var(--yourhome-slide-button-text, #183249);
+  display: inline-block;
+  font-weight: 700;
+  padding: 0.75rem 1.15rem;
+  text-decoration: none;
+  transition: background-color 160ms ease;
+}
+
+.yourhome-hero-slide__button:hover { filter: brightness(0.94); }
+.yourhome-hero-slide__button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
+
+@media (max-width: 700px) {
+  .wp-block-yourhome-hero-slide { min-height: 32rem; }
+  .yourhome-hero-slide__content { padding-block: 3.5rem 6rem; }
+  .yourhome-hero-slide__heading { font-size: clamp(2.35rem, 12vw, 3.75rem); }
+}

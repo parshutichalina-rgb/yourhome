@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "title": "Editorial Estate",
+  "settings": {
+    "color": {
+      "palette": [
+        { "name": "Ink", "slug": "ink", "color": "#17212B" },
+        { "name": "Navy", "slug": "navy", "color": "#183249" },
+        { "name": "Estate Green", "slug": "evergreen", "color": "#496B5C" },
+        { "name": "Sage", "slug": "sage", "color": "#8CA79B" },
+        { "name": "Ochre", "slug": "amber", "color": "#B8894A" },
+        { "name": "Sand", "slug": "sand", "color": "#EEE9DF" },
+        { "name": "Slate Blue", "slug": "ultramarine", "color": "#536D82" },
+        { "name": "Muted Plum", "slug": "electric-purple", "color": "#746775" },
+        { "name": "Muted Teal", "slug": "aqua-glow", "color": "#64858A" },
+        { "name": "Canvas", "slug": "canvas", "color": "#F7F6F2" },
+        { "name": "Surface", "slug": "surface", "color": "#FFFFFF" },
+        { "name": "Muted", "slug": "muted", "color": "#66737C" },
+        { "name": "Border", "slug": "border", "color": "#D8DEE2" },
+        { "name": "Success", "slug": "success", "color": "#3F765A" },
+        { "name": "Error", "slug": "error", "color": "#A64B4B" },
+        { "name": "Foreground", "slug": "foreground", "color": "#17212B" },
+        { "name": "Background", "slug": "background", "color": "#F7F6F2" },
+        { "name": "Brand", "slug": "brand", "color": "#496B5C" },
+        { "name": "Accent", "slug": "accent", "color": "#B8894A" }
+      ]
+    }
+  },
+  "styles": {
+    "color": { "background": "#F7F6F2", "text": "#17212B" },
+    "elements": {
+      "button": { "color": { "background": "#496B5C", "text": "#FFFFFF" } },
+      "link": { "color": { "text": "#496B5C" } }
+    }
+  }
+}
