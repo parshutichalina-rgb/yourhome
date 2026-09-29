@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "yourhome/contact-us",
+  "version": "1.0.0",
+  "title": "Contact Us",
+  "category": "widgets",
+  "icon": "email-alt",
+  "description": "A contact call to action with email and phone details.",
+  "textdomain": "yourhome",
+  "attributes": {
+    "eyebrow": { "type": "string" },
+    "heading": { "type": "string" },
+    "text": { "type": "string" },
+    "email": { "type": "string", "default": "" },
+    "phone": { "type": "string", "default": "" },
+    "buttonLabel": { "type": "string" }
+  },
+  "supports": { "align": ["wide", "full"], "anchor": true, "html": false },
+  "render": "file:./render.php",
+  "style": "file:./style.css"
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "yourhome/faq",
+  "version": "1.0.0",
+  "title": "FAQ",
+  "category": "text",
+  "icon": "editor-help",
+  "description": "An accessible property FAQ section.",
+  "textdomain": "yourhome",
+  "attributes": {
+    "eyebrow": { "type": "string" },
+    "heading": { "type": "string" },
+    "items": { "type": "array", "default": [] }
+  },
+  "supports": { "align": ["wide", "full"], "anchor": true, "html": false },
+  "render": "file:./render.php",
+  "style": "file:./style.css"
+}

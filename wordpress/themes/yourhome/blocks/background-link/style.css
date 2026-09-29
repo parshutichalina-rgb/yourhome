@@ -1,0 +1,10 @@
+.wp-block-yourhome-background-link { background-image: linear-gradient(90deg, rgb(23 33 43 / 88%), rgb(23 33 43 / 32%)), var(--yourhome-background-link-image); background-position: center; background-size: cover; margin: 0; min-height: clamp(24rem, 50vw, 38rem); }
+.yourhome-background-link__anchor { align-items: center; color: #fff !important; display: flex; min-height: inherit; padding-block: var(--yourhome-section-space); text-decoration: none; }
+.yourhome-background-link__content { display: grid; gap: 1rem; margin-inline: auto; width: min(calc(100% - 2 * var(--yourhome-gutter)), var(--wp--style--global--wide-size)); }
+.yourhome-background-link__eyebrow { font-size: .8rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+.yourhome-background-link__heading { color: inherit; font-family: var(--wp--preset--font-family--display); font-size: clamp(2.25rem, 5vw, 4.5rem); font-weight: 600; letter-spacing: -.035em; line-height: 1.02; max-width: 15ch; }
+.yourhome-background-link__label { align-items: center; border-bottom: 2px solid currentColor; display: inline-flex; font-weight: 800; gap: .5rem; justify-self: start; padding-bottom: .25rem; }
+
+.editor-styles-wrapper .yourhome-background-link__eyebrow,
+.editor-styles-wrapper .yourhome-background-link__heading,
+.editor-styles-wrapper .yourhome-background-link__label { color: inherit; }

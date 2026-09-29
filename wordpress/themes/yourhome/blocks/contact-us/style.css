@@ -1,0 +1,10 @@
+.wp-block-yourhome-contact-us { background: var(--yourhome-navy); color: #fff; padding-block: var(--yourhome-section-space); }
+.yourhome-contact-us__inner { align-items: center; display: grid; gap: clamp(2rem, 6vw, 6rem); grid-template-columns: minmax(0, 1.5fr) minmax(16rem, .5fr); margin-inline: auto; width: min(calc(100% - 2 * var(--yourhome-gutter)), var(--wp--style--global--wide-size)); }
+.yourhome-contact-us__inner h2 { color: inherit; margin: 0; }
+.yourhome-contact-us__inner p { color: #dce5e9; margin-bottom: 0; }
+.yourhome-contact-us__actions { align-items: flex-start; display: flex; flex-direction: column; gap: .75rem; }
+.yourhome-contact-us__actions a { color: #fff; }
+.yourhome-contact-us__actions .wp-element-button { background: var(--yourhome-amber); color: var(--yourhome-ink); }
+@media (max-width: 720px) { .yourhome-contact-us__inner { grid-template-columns: 1fr; } }
+
+.editor-styles-wrapper .yourhome-contact-us__actions > span:not(.wp-element-button) { color: #fff; }

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "yourhome/new-properties",
+  "version": "1.0.0",
+  "title": "New Properties",
+  "category": "widgets",
+  "icon": "admin-home",
+  "description": "Shows the latest published properties.",
+  "textdomain": "yourhome",
+  "attributes": {
+    "eyebrow": { "type": "string" },
+    "heading": { "type": "string" },
+    "intro": { "type": "string" },
+    "linkLabel": { "type": "string" },
+    "linkUrl": { "type": "string", "default": "" },
+    "emptyMessage": { "type": "string" },
+    "count": { "type": "number", "default": 6 }
+  },
+  "supports": { "align": ["wide", "full"], "anchor": true, "html": false },
+  "render": "file:./render.php",
+  "style": "file:./style.css"
+}

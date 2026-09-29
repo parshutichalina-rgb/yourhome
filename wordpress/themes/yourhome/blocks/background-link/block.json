@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "yourhome/background-link",
+  "version": "1.0.0",
+  "title": "Image Link",
+  "category": "design",
+  "icon": "format-image",
+  "description": "A prominent link with a background image.",
+  "textdomain": "yourhome",
+  "attributes": {
+    "eyebrow": { "type": "string" },
+    "heading": { "type": "string" },
+    "label": { "type": "string" },
+    "url": { "type": "string" },
+    "imageUrl": { "type": "string", "default": "" },
+    "imageId": { "type": "number", "default": 0 }
+  },
+  "supports": { "align": ["wide", "full"], "anchor": true, "html": false },
+  "render": "file:./render.php",
+  "style": "file:./style.css"
+}

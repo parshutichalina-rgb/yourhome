@@ -12,6 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once get_stylesheet_directory() . '/inc/layouts.php';
 require_once get_stylesheet_directory() . '/inc/customizer.php';
 require_once get_stylesheet_directory() . '/inc/hero.php';
+require_once get_stylesheet_directory() . '/inc/properties.php';
 
 add_action(
 	'after_setup_theme',
@@ -48,12 +49,17 @@ add_action(
 		);
 
 		foreach ( $scripts as $handle => $relative_path ) {
-			$path = get_stylesheet_directory() . '/' . $relative_path;
+			$path         = get_stylesheet_directory() . '/' . $relative_path;
+			$dependencies = array( 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-element', 'wp-i18n' );
+
+			if ( 'yourhome-theme-blocks' === $handle ) {
+				$dependencies[] = 'wp-server-side-render';
+			}
 
 			wp_enqueue_script(
 				$handle,
 				get_stylesheet_directory_uri() . '/' . $relative_path,
-				array( 'wp-block-editor', 'wp-blocks', 'wp-components', 'wp-element', 'wp-i18n' ),
+				$dependencies,
 				file_exists( $path ) ? (string) filemtime( $path ) : null,
 				true
 			);

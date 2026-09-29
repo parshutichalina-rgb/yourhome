@@ -36,7 +36,7 @@ function yourhome_platform_register_property_model(): void {
 				'item_reverted_to_draft'   => __( 'Property reverted to draft.', 'yourhome-platform' ),
 			),
 			'public'        => true,
-			'has_archive'   => 'properties',
+			'has_archive'   => false,
 			'rewrite'       => array( 'slug' => 'properties' ),
 			'show_in_rest'  => true,
 			'menu_icon'     => 'dashicons-admin-home',
@@ -98,15 +98,15 @@ function yourhome_platform_register_property_meta(): void {
 		'yourhome_currency'       => array( 'type' => 'string', 'sanitize_callback' => 'yourhome_platform_sanitize_uppercase_code' ),
 		'yourhome_country'        => array( 'type' => 'string', 'sanitize_callback' => 'yourhome_platform_sanitize_uppercase_code' ),
 		'yourhome_city'           => array( 'type' => 'string', 'sanitize_callback' => 'sanitize_text_field' ),
-		'yourhome_latitude'       => array( 'type' => 'number', 'sanitize_callback' => 'floatval' ),
-		'yourhome_longitude'      => array( 'type' => 'number', 'sanitize_callback' => 'floatval' ),
-		'yourhome_floor_area_sqm' => array( 'type' => 'number', 'sanitize_callback' => 'floatval' ),
+		'yourhome_latitude'       => array( 'type' => 'number', 'sanitize_callback' => 'yourhome_platform_sanitize_float_meta' ),
+		'yourhome_longitude'      => array( 'type' => 'number', 'sanitize_callback' => 'yourhome_platform_sanitize_float_meta' ),
+		'yourhome_floor_area_sqm' => array( 'type' => 'number', 'sanitize_callback' => 'yourhome_platform_sanitize_float_meta' ),
 		'yourhome_bedrooms'       => array( 'type' => 'integer', 'sanitize_callback' => 'absint' ),
 		'yourhome_bathrooms'      => array( 'type' => 'integer', 'sanitize_callback' => 'absint' ),
-		'yourhome_lot_area_sqm'   => array( 'type' => 'number', 'sanitize_callback' => 'floatval' ),
+		'yourhome_lot_area_sqm'   => array( 'type' => 'number', 'sanitize_callback' => 'yourhome_platform_sanitize_float_meta' ),
 		'yourhome_street'         => array( 'type' => 'string', 'sanitize_callback' => 'sanitize_text_field' ),
 		'yourhome_postcode'       => array( 'type' => 'string', 'sanitize_callback' => 'sanitize_text_field' ),
-		'yourhome_floor'          => array( 'type' => 'integer', 'sanitize_callback' => 'intval' ),
+		'yourhome_floor'          => array( 'type' => 'integer', 'sanitize_callback' => 'yourhome_platform_sanitize_integer_meta' ),
 		'yourhome_year_built'     => array( 'type' => 'integer', 'sanitize_callback' => 'absint' ),
 		'yourhome_availability'   => array( 'type' => 'string', 'sanitize_callback' => 'sanitize_key' ),
 	);
@@ -142,6 +142,24 @@ function yourhome_platform_can_edit_property_meta( bool $allowed, string $meta_k
  */
 function yourhome_platform_sanitize_uppercase_code( mixed $value ): string {
 	return strtoupper( sanitize_text_field( (string) $value ) );
+}
+
+/**
+ * Normalize numeric metadata while accepting WordPress sanitizer context arguments.
+ *
+ * @param mixed $value Untrusted metadata value.
+ */
+function yourhome_platform_sanitize_float_meta( mixed $value ): float {
+	return (float) $value;
+}
+
+/**
+ * Normalize signed integer metadata while accepting WordPress sanitizer context arguments.
+ *
+ * @param mixed $value Untrusted metadata value.
+ */
+function yourhome_platform_sanitize_integer_meta( mixed $value ): int {
+	return (int) $value;
 }
 
 /**

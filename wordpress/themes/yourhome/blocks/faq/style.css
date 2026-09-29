@@ -1,0 +1,12 @@
+.wp-block-yourhome-faq { padding-block: var(--yourhome-section-space); }
+.yourhome-faq__inner { margin-inline: auto; width: min(calc(100% - 2 * var(--yourhome-gutter)), var(--wp--style--global--wide-size)); }
+.yourhome-faq__content { max-width: 860px; }
+.yourhome-faq__content > h2 { margin: 0 0 1.5rem; }
+.yourhome-faq__items { border-top: 1px solid var(--yourhome-border); }
+.yourhome-faq__items details { background: transparent; border: 0; border-bottom: 1px solid var(--yourhome-border); border-radius: 0; padding: 1.1rem 0; }
+.yourhome-faq__items summary { color: var(--yourhome-ink); font-family: var(--wp--preset--font-family--display); font-size: 1.2rem; list-style-position: outside; margin-left: 1.2rem; }
+.yourhome-faq__items details p { color: var(--yourhome-muted); margin: .8rem 0 0 1.2rem; }
+
+.editor-styles-wrapper .yourhome-faq__items details[open] summary { margin-bottom: 0; }
+.editor-styles-wrapper .yourhome-faq__remove { margin: .75rem 0 0 1.2rem; }
+.editor-styles-wrapper .yourhome-faq__add { margin-top: 1rem; }

@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "yourhome/property-catalog",
+  "version": "1.0.0",
+  "title": "Property Catalog",
+  "category": "widgets",
+  "icon": "filter",
+  "description": "A filterable server-rendered property catalog.",
+  "textdomain": "yourhome",
+  "attributes": {
+    "eyebrow": { "type": "string" },
+    "heading": { "type": "string" },
+    "intro": { "type": "string" },
+    "submitLabel": { "type": "string" },
+    "clearLabel": { "type": "string" },
+    "emptyHeading": { "type": "string" },
+    "emptyText": { "type": "string" },
+    "emptyButtonLabel": { "type": "string" }
+  },
+  "usesContext": ["postId", "postType"],
+  "supports": { "align": ["wide", "full"], "html": false, "multiple": false },
+  "render": "file:./render.php",
+  "style": "file:./style.css"
+}
