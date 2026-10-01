@@ -1,0 +1,22 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "yourhome/property-details",
+  "version": "1.0.0",
+  "title": "Property Details",
+  "category": "widgets",
+  "icon": "admin-home",
+  "description": "Live property overview, specifications and location from the current listing.",
+  "textdomain": "yourhome",
+  "attributes": {
+    "view": { "type": "string", "enum": ["overview", "facts", "map"], "default": "overview" },
+    "heading": { "type": "string" },
+    "locationHeading": { "type": "string" },
+    "contactLabel": { "type": "string" },
+    "contactUrl": { "type": "string" }
+  },
+  "usesContext": ["postId", "postType"],
+  "supports": { "html": false, "anchor": true },
+  "render": "file:./render.php",
+  "style": "file:./style.css"
+}

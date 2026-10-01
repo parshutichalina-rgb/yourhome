@@ -6,7 +6,7 @@
   "title": "Contact Us",
   "category": "widgets",
   "icon": "email-alt",
-  "description": "A contact call to action with email and phone details.",
+  "description": "A contact call to action linking to an editable Contact Us page.",
   "textdomain": "yourhome",
   "attributes": {
     "eyebrow": { "type": "string" },
@@ -14,7 +14,10 @@
     "text": { "type": "string" },
     "email": { "type": "string", "default": "" },
     "phone": { "type": "string", "default": "" },
-    "buttonLabel": { "type": "string" }
+    "buttonLabel": { "type": "string" },
+    "buttonUrl": { "type": "string" },
+    "imageUrl": { "type": "string", "default": "" },
+    "imageId": { "type": "number", "default": 0 }
   },
   "supports": { "align": ["wide", "full"], "anchor": true, "html": false },
   "render": "file:./render.php",

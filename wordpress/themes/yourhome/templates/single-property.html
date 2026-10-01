@@ -1,10 +1,24 @@
 <!-- wp:template-part {"slug":"header","tagName":"header"} /-->
-<!-- wp:group {"tagName":"main","className":"yourhome-property-detail","style":{"spacing":{"padding":{"top":"var:preset|spacing|70","right":"var(--yourhome-gutter)","bottom":"var:preset|spacing|70","left":"var(--yourhome-gutter)"}}},"layout":{"type":"constrained"}} -->
-<main class="wp-block-group yourhome-property-detail" style="padding-top:var(--wp--preset--spacing--70);padding-right:var(--yourhome-gutter);padding-bottom:var(--wp--preset--spacing--70);padding-left:var(--yourhome-gutter)"><!-- wp:post-terms {"term":"yourhome_property_type","className":"yourhome-eyebrow"} /-->
-<!-- wp:post-title {"level":1} /-->
-<!-- wp:post-featured-image {"aspectRatio":"16/9"} /-->
-<!-- wp:post-content {"layout":{"type":"constrained"}} /-->
-<!-- wp:buttons --><div class="wp-block-buttons"><!-- wp:button --><div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="#contact-us">Contact us about this property</a></div><!-- /wp:button --></div><!-- /wp:buttons --></main>
+<!-- wp:group {"tagName":"main","className":"yourhome-property-detail","layout":{"type":"default"}} -->
+<main class="wp-block-group yourhome-property-detail">
+<!-- wp:group {"className":"yourhome-property-detail__inner","layout":{"type":"default"}} -->
+<div class="wp-block-group yourhome-property-detail__inner">
+<!-- wp:yourhome/property-details {"view":"overview"} /-->
+<!-- wp:group {"className":"yourhome-property-detail__body","layout":{"type":"default"}} -->
+<div class="wp-block-group yourhome-property-detail__body">
+<!-- wp:yourhome/property-details {"view":"facts","anchor":"property-specifications","heading":"Property details","locationHeading":"Location"} /-->
+<!-- wp:group {"tagName":"section","className":"yourhome-property-detail__description","layout":{"type":"default"}} -->
+<section class="wp-block-group yourhome-property-detail__description">
+<!-- wp:heading --><h2 class="wp-block-heading">About this property</h2><!-- /wp:heading -->
+<!-- wp:post-content {"layout":{"type":"default"}} /-->
+</section>
+<!-- /wp:group -->
+<!-- wp:yourhome/property-details {"view":"map","heading":"Map"} /-->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+</main>
 <!-- /wp:group -->
 <!-- wp:yourhome/contact-us /-->
 <!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

@@ -31,6 +31,18 @@
 		return [ 'left', 'center', 'right' ].indexOf( textAlign ) === -1 ? 'left' : textAlign;
 	}
 
+	function getHeroBlockOptions( attributes ) {
+		const options = { className: 'yourhome-hero is-transition-' + attributes.transition };
+
+		if ( 'viewport' === attributes.heightMode ) {
+			options.className += ' is-height-viewport';
+		} else if ( 'custom' === attributes.heightMode && Number.isFinite( attributes.minHeight ) ) {
+			options.style = { '--yourhome-hero-min-height': Math.max( 320, Math.min( 1200, attributes.minHeight ) ) + 'px' };
+		}
+
+		return options;
+	}
+
 	function setBlockStyleColor( props, key, value ) {
 		const style = Object.assign( {}, props.attributes.style || {} );
 		style.color = Object.assign( {}, style.color || {} );
@@ -335,17 +347,38 @@
 	blocks.registerBlockType( 'yourhome/hero', {
 		edit: function ( props ) {
 			const attributes = props.attributes;
-			const blockProps = useBlockProps( { className: 'yourhome-hero is-transition-' + attributes.transition } );
+			const blockProps = useBlockProps( getHeroBlockOptions( attributes ) );
 
 			return el(
 				Fragment,
 				null,
 				el( InspectorControls, null,
+					el( PanelBody, { title: __( 'Height', 'yourhome' ) },
+						el( SelectControl, {
+							label: __( 'Height mode', 'yourhome' ),
+							value: attributes.heightMode || '',
+							options: [
+								{ label: __( 'Theme default', 'yourhome' ), value: '' },
+								{ label: __( 'Custom minimum height', 'yourhome' ), value: 'custom' },
+								{ label: __( 'Remaining viewport after header', 'yourhome' ), value: 'viewport' },
+							],
+							onChange: function ( heightMode ) {
+								props.setAttributes( 'custom' === heightMode && ! attributes.minHeight ? { heightMode: heightMode, minHeight: 640 } : { heightMode: heightMode } );
+							},
+						} ),
+						'custom' === attributes.heightMode && el( RangeControl, {
+							label: __( 'Minimum height (px)', 'yourhome' ),
+							value: attributes.minHeight || 640,
+							min: 320,
+							max: 1200,
+							step: 20,
+							onChange: function ( minHeight ) { props.setAttributes( { minHeight: minHeight } ); },
+						} )
+					),
 					el( PanelBody, { title: __( 'Slider settings', 'yourhome' ) },
 						el( ToggleControl, { label: __( 'Autoplay', 'yourhome' ), checked: attributes.autoplay, onChange: function ( autoplay ) { props.setAttributes( { autoplay: autoplay } ); } } ),
 						el( RangeControl, { label: __( 'Interval (seconds)', 'yourhome' ), value: attributes.interval / 1000, min: 3, max: 15, onChange: function ( seconds ) { props.setAttributes( { interval: seconds * 1000 } ); } } ),
 						el( SelectControl, { label: __( 'Transition', 'yourhome' ), value: attributes.transition, options: [ { label: __( 'Fade', 'yourhome' ), value: 'fade' }, { label: __( 'Slide', 'yourhome' ), value: 'slide' } ], onChange: function ( transition ) { props.setAttributes( { transition: transition } ); } } ),
-						el( ToggleControl, { label: __( 'Show arrows', 'yourhome' ), checked: attributes.showArrows, onChange: function ( showArrows ) { props.setAttributes( { showArrows: showArrows } ); } } ),
 						el( ToggleControl, { label: __( 'Show pagination', 'yourhome' ), checked: attributes.showPagination, onChange: function ( showPagination ) { props.setAttributes( { showPagination: showPagination } ); } } ),
 						el( ToggleControl, { label: __( 'Pause on hover', 'yourhome' ), checked: attributes.pauseOnHover, onChange: function ( pauseOnHover ) { props.setAttributes( { pauseOnHover: pauseOnHover } ); } } )
 					)
@@ -354,7 +387,7 @@
 			);
 		},
 		save: function ( props ) {
-			const blockProps = useBlockProps.save( { className: 'yourhome-hero is-transition-' + props.attributes.transition } );
+			const blockProps = useBlockProps.save( getHeroBlockOptions( props.attributes ) );
 			return el( 'section', blockProps, el( InnerBlocks.Content ) );
 		},
 		deprecated: [ {

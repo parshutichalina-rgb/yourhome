@@ -14,11 +14,11 @@
 
 .yourhome-section__heading {
   font-family: var(--wp--preset--font-family--display, Georgia, serif);
-  font-size: clamp(1.9rem, 4vw, 3.25rem);
-  letter-spacing: -0.02em;
-  line-height: 1.08;
+  font-size: clamp(2.35rem, 5vw, 4.75rem);
+  letter-spacing: -0.045em;
+  line-height: 0.98;
   margin: 0 0 1.15rem;
-  max-width: 20ch;
+  max-width: 13ch;
   text-wrap: balance;
 }
 
@@ -26,7 +26,7 @@
 .wp-block-yourhome-section.is-style-glass:not(.has-background),
 .wp-block-yourhome-section.is-style-outline:not(.has-background) {
   border: 1px solid var(--wp--preset--color--border, #d8dee2);
-  border-radius: var(--wp--custom--radius--large, 0.5rem);
+  border-radius: var(--wp--custom--radius--large, 2rem);
 }
 
 .wp-block-yourhome-section.is-style-glass:not(.has-background) { background: var(--wp--preset--color--surface, #fff); }

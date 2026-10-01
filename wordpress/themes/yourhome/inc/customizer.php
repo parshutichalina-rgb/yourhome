@@ -44,6 +44,19 @@ function yourhome_register_customizer( WP_Customize_Manager $manager ): void {
 			)
 		);
 	}
+	$manager->add_section( 'yourhome_property_map', array( 'title' => __( 'Property maps', 'yourhome' ), 'priority' => 40 ) );
+	foreach ( array(
+		'yourhome_map_embed_url' => __( 'OpenStreetMap-compatible embed URL', 'yourhome' ),
+		'yourhome_map_view_url' => __( 'OpenStreetMap-compatible full map URL', 'yourhome' ),
+	) as $key => $label ) {
+		$manager->add_setting( $key, array( 'default' => '', 'sanitize_callback' => 'yourhome_sanitize_map_url' ) );
+		$manager->add_control( $key, array( 'label' => $label, 'section' => 'yourhome_property_map', 'type' => 'url' ) );
+	}
+}
+
+/** Map embeds require an explicitly configured HTTPS provider. */
+function yourhome_sanitize_map_url( string $value ): string {
+	return esc_url_raw( $value, array( 'https' ) );
 }
 
 /**

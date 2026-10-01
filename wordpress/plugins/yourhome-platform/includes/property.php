@@ -109,6 +109,7 @@ function yourhome_platform_register_property_meta(): void {
 		'yourhome_floor'          => array( 'type' => 'integer', 'sanitize_callback' => 'yourhome_platform_sanitize_integer_meta' ),
 		'yourhome_year_built'     => array( 'type' => 'integer', 'sanitize_callback' => 'absint' ),
 		'yourhome_availability'   => array( 'type' => 'string', 'sanitize_callback' => 'sanitize_key' ),
+		'yourhome_demo_address'   => array( 'type' => 'boolean', 'sanitize_callback' => 'rest_sanitize_boolean' ),
 	);
 
 	foreach ( $fields as $meta_key => $field ) {

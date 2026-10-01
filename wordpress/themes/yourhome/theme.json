@@ -9,31 +9,31 @@
       "customGradient": true,
       "defaultPalette": false,
       "palette": [
-        { "slug": "ink", "name": "Ink", "color": "#17212B" },
-        { "slug": "navy", "name": "Deep Navy", "color": "#183249" },
-        { "slug": "evergreen", "name": "Estate Green", "color": "#496B5C" },
-        { "slug": "sage", "name": "Sage", "color": "#8CA79B" },
-        { "slug": "amber", "name": "Warm Ochre", "color": "#B8894A" },
-        { "slug": "sand", "name": "Warm Sand", "color": "#EEE9DF" },
-        { "slug": "canvas", "name": "Warm White", "color": "#F7F6F2" },
-        { "slug": "surface", "name": "White", "color": "#FFFFFF" },
-        { "slug": "muted", "name": "Slate", "color": "#66737C" },
-        { "slug": "border", "name": "Border", "color": "#D8DEE2" },
+        { "slug": "ink", "name": "Forest Ink", "color": "#16352C" },
+        { "slug": "navy", "name": "Deep Forest", "color": "#123C31" },
+        { "slug": "evergreen", "name": "Mineral Green", "color": "#2F6A56" },
+        { "slug": "sage", "name": "Soft Sage", "color": "#A9C4B3" },
+        { "slug": "amber", "name": "Fresh Lime", "color": "#C9F79F" },
+        { "slug": "sand", "name": "Warm Limestone", "color": "#E9E4D8" },
+        { "slug": "canvas", "name": "Oat Canvas", "color": "#F4F2EA" },
+        { "slug": "surface", "name": "Ivory", "color": "#FFFEF9" },
+        { "slug": "muted", "name": "Moss Grey", "color": "#66756D" },
+        { "slug": "border", "name": "Stone Border", "color": "#D7DCD3" },
         { "slug": "success", "name": "Success", "color": "#3F765A" },
         { "slug": "error", "name": "Error", "color": "#A64B4B" },
         { "slug": "ultramarine", "name": "Slate Blue", "color": "#536D82" },
         { "slug": "electric-purple", "name": "Muted Plum", "color": "#746775" },
         { "slug": "aqua-glow", "name": "Muted Teal", "color": "#64858A" },
-        { "slug": "foreground", "name": "Legacy Foreground", "color": "#17212B" },
-        { "slug": "background", "name": "Legacy Background", "color": "#F7F6F2" },
-        { "slug": "brand", "name": "Legacy Brand", "color": "#496B5C" },
-        { "slug": "accent", "name": "Legacy Accent", "color": "#B8894A" }
+        { "slug": "foreground", "name": "Legacy Foreground", "color": "#16352C" },
+        { "slug": "background", "name": "Legacy Background", "color": "#F4F2EA" },
+        { "slug": "brand", "name": "Legacy Brand", "color": "#2F6A56" },
+        { "slug": "accent", "name": "Legacy Accent", "color": "#C9F79F" }
       ],
       "gradients": [
-        { "slug": "estate-dusk", "name": "Estate Navy", "gradient": "linear-gradient(135deg, #183249 0%, #29495D 100%)" },
-        { "slug": "warm-listing", "name": "Warm Neutral", "gradient": "linear-gradient(135deg, #F7F6F2 0%, #EEE9DF 100%)" },
-        { "slug": "city-night", "name": "Charcoal Navy", "gradient": "linear-gradient(135deg, #17212B 0%, #183249 100%)" },
-        { "slug": "mesh-aurora", "name": "Soft Sage", "gradient": "linear-gradient(135deg, #F7F6F2 0%, #E4ECE7 100%)" }
+        { "slug": "estate-dusk", "name": "Forest Canopy", "gradient": "linear-gradient(135deg, #123C31 0%, #2F6A56 100%)" },
+        { "slug": "warm-listing", "name": "Warm Limestone", "gradient": "linear-gradient(135deg, #FFFEF9 0%, #E9E4D8 100%)" },
+        { "slug": "city-night", "name": "Forest Night", "gradient": "linear-gradient(135deg, #102A23 0%, #123C31 100%)" },
+        { "slug": "mesh-aurora", "name": "Fresh Sage", "gradient": "linear-gradient(135deg, #F4F2EA 0%, #DDEBDD 55%, #C9F79F 140%)" }
       ]
     },
     "layout": {
@@ -43,9 +43,9 @@
     "shadow": {
       "defaultPresets": false,
       "presets": [
-        { "slug": "soft", "name": "Soft", "shadow": "0 2px 10px rgba(23, 33, 43, 0.06)" },
-        { "slug": "card", "name": "Card", "shadow": "0 6px 20px rgba(23, 33, 43, 0.08)" },
-        { "slug": "floating", "name": "Elevated", "shadow": "0 12px 32px rgba(23, 33, 43, 0.12)" }
+        { "slug": "soft", "name": "Soft", "shadow": "0 8px 24px rgba(18, 60, 49, 0.06)" },
+        { "slug": "card", "name": "Card", "shadow": "0 18px 48px rgba(18, 60, 49, 0.11)" },
+        { "slug": "floating", "name": "Elevated", "shadow": "0 28px 80px rgba(18, 60, 49, 0.16)" }
       ]
     },
     "spacing": {
@@ -79,8 +79,8 @@
       ]
     },
     "custom": {
-      "radius": { "small": "0.25rem", "medium": "0.375rem", "large": "0.5rem", "pill": "0.25rem" },
-      "transition": { "fast": "160ms ease", "normal": "260ms ease" }
+      "radius": { "small": "0.75rem", "medium": "1.25rem", "large": "2rem", "pill": "999px" },
+      "transition": { "fast": "180ms cubic-bezier(0.2, 0.7, 0.2, 1)", "normal": "420ms cubic-bezier(0.2, 0.7, 0.2, 1)" }
     }
   },
   "styles": {

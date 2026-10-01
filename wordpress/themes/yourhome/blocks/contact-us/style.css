@@ -1,10 +1,13 @@
-.wp-block-yourhome-contact-us { background: var(--yourhome-navy); color: #fff; padding-block: var(--yourhome-section-space); }
-.yourhome-contact-us__inner { align-items: center; display: grid; gap: clamp(2rem, 6vw, 6rem); grid-template-columns: minmax(0, 1.5fr) minmax(16rem, .5fr); margin-inline: auto; width: min(calc(100% - 2 * var(--yourhome-gutter)), var(--wp--style--global--wide-size)); }
-.yourhome-contact-us__inner h2 { color: inherit; margin: 0; }
+.wp-block-yourhome-contact-us { background: transparent; color: #fff; padding: 0; }
+.yourhome-contact-us__inner { align-items: center; background-image: linear-gradient(90deg, rgb(8 35 29 / 94%) 0%, rgb(8 35 29 / 72%) 48%, rgb(8 35 29 / 26%) 100%), var(--yourhome-contact-image); background-position: center; background-size: cover; border-radius: 0; display: flex; margin-inline: auto; min-height: clamp(30rem, 52vw, 44rem); overflow: hidden; padding: clamp(3rem, 8vw, 7rem) max(var(--yourhome-gutter), calc((100% - var(--wp--style--global--wide-size)) / 2 + var(--yourhome-gutter))); position: relative; width: 100%; }
+.yourhome-contact-us__content { max-width: 48rem; }
+.yourhome-contact-us__inner h2 { color: inherit; font-size: clamp(2.5rem, 5vw, 5rem); line-height: .98; margin: 0; max-width: 11ch; }
 .yourhome-contact-us__inner p { color: #dce5e9; margin-bottom: 0; }
-.yourhome-contact-us__actions { align-items: flex-start; display: flex; flex-direction: column; gap: .75rem; }
+.yourhome-contact-us__actions { align-items: flex-start; display: flex; flex-direction: column; gap: .75rem; margin-top: 1.75rem; }
 .yourhome-contact-us__actions a { color: #fff; }
-.yourhome-contact-us__actions .wp-element-button { background: var(--yourhome-amber); color: var(--yourhome-ink); }
+.yourhome-contact-us__actions .wp-element-button { background: var(--yourhome-canvas); border: 0; border-radius: 999px; box-shadow: 0 12px 32px rgb(0 0 0 / 16%); color: var(--yourhome-ink); padding: .9rem 1.35rem; }
+.yourhome-contact-us__actions .wp-element-button::after { color: var(--yourhome-green); content: "→"; margin-left: .65rem; }
+.yourhome-contact-us__actions .wp-element-button:hover { background: #fff; color: var(--yourhome-ink); }
 @media (max-width: 720px) { .yourhome-contact-us__inner { grid-template-columns: 1fr; } }
 
 .editor-styles-wrapper .yourhome-contact-us__actions > span:not(.wp-element-button) { color: #fff; }

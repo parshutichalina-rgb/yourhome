@@ -1,0 +1,74 @@
+.yourhome-property-detail {
+  margin: 0;
+  max-width: none;
+  padding: clamp(1.5rem, 3vw, 2.5rem) var(--yourhome-gutter) var(--yourhome-section-space);
+  width: 100%;
+}
+
+.yourhome-property-detail__inner {
+  margin-inline: auto;
+  max-width: var(--wp--style--global--wide-size);
+  padding-inline: var(--yourhome-header-inset-start, 1rem) var(--yourhome-header-inset-end, .55rem);
+  width: 100%;
+}
+
+.yourhome-property-overview__photos { display: grid; gap: .5rem; }
+.yourhome-property-overview__photos.has-gallery { grid-template-columns: minmax(0, 2fr) repeat(2, minmax(0, 1fr)); grid-template-rows: repeat(2, minmax(0, 1fr)); }
+.yourhome-property-overview__media { background: var(--yourhome-surface); border-radius: var(--yourhome-radius-m); margin: 0; min-width: 0; overflow: hidden; position: relative; }
+.yourhome-property-overview__image { aspect-ratio: 16 / 7; display: block; height: auto; object-fit: cover; width: 100%; }
+.yourhome-property-overview__photos.has-gallery .yourhome-property-overview__media:first-child { grid-row: 1 / 3; }
+.yourhome-property-overview__photos.has-gallery .yourhome-property-overview__image { aspect-ratio: 4 / 3; height: 100%; }
+.yourhome-property-overview__photos.has-gallery .yourhome-property-overview__media:first-child .yourhome-property-overview__image { aspect-ratio: 4 / 3; }
+.yourhome-property-overview__photos.has-gallery:has(> :last-child:nth-child(2)) { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); grid-template-rows: auto; }
+.yourhome-property-overview__photos.has-gallery:has(> :last-child:nth-child(2)) .yourhome-property-overview__media:first-child { grid-row: auto; }
+.yourhome-property-overview__photos.has-gallery:has(> :last-child:nth-child(3)) { grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); }
+.yourhome-property-overview__photos.has-gallery:has(> :last-child:nth-child(4)) > :last-child { grid-column: 2 / 4; }
+.yourhome-property-overview__media figcaption { background: var(--yourhome-surface); bottom: 0; color: var(--yourhome-muted); left: 0; padding: .75rem 1rem; position: absolute; right: 0; }
+
+.yourhome-property-overview__header { padding-block: clamp(1.5rem, 3vw, 2.5rem) 0; }
+.yourhome-property-overview__header h1 { font-size: clamp(2rem, 4vw, 3.5rem); margin: .85rem 0; overflow-wrap: anywhere; }
+.yourhome-property-overview__address { color: var(--yourhome-muted); font-size: 1rem; margin: 0; overflow-wrap: anywhere; }
+.yourhome-property-overview__badges { display: flex; flex-wrap: wrap; gap: .5rem; }
+.yourhome-property-overview__badges span { background: var(--yourhome-surface); border: 1px solid var(--yourhome-border); border-radius: 999px; font-size: .8125rem; font-weight: 700; padding: .35rem .9rem; }
+.yourhome-property-overview__badges span:first-child { background: var(--yourhome-navy); border-color: var(--yourhome-navy); color: var(--yourhome-surface); }
+.yourhome-property-overview__contact { display: inline-block; margin-top: 1rem; }
+
+.yourhome-property-detail__body { margin-top: clamp(1.5rem, 3vw, 2.5rem); }
+.yourhome-property-detail__body > * { margin-block: 0; }
+.yourhome-property-facts { align-items: start; display: grid; gap: clamp(1rem, 2vw, 1.5rem); grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); scroll-margin-top: 2rem; }
+.yourhome-property-detail__description,
+.yourhome-property-map,
+.yourhome-property-facts__panel { background: var(--yourhome-surface); border: 1px solid var(--yourhome-border); border-radius: var(--yourhome-radius-m); min-width: 0; padding: clamp(1.25rem, 2.5vw, 2rem); }
+.yourhome-property-detail__description,
+.yourhome-property-map { margin-top: clamp(1rem, 2vw, 1.5rem); }
+.yourhome-property-detail__description h2,
+.yourhome-property-map h2,
+.yourhome-property-facts__panel h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin: 0 0 1.25rem; }
+.yourhome-property-facts__price { color: var(--yourhome-navy); font-size: clamp(1.75rem, 3.5vw, 2.75rem); font-weight: 800; line-height: 1.2; margin: 0 0 1.5rem; overflow-wrap: anywhere; }
+.yourhome-property-facts__list { margin: 0; }
+.yourhome-property-facts__list > div { border-bottom: 1px solid var(--yourhome-border); display: grid; gap: 1rem; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); padding: .9rem 0; }
+.yourhome-property-facts__list > div:first-child { padding-top: 0; }
+.yourhome-property-facts__list > div:last-child { border-bottom: 0; padding-bottom: 0; }
+.yourhome-property-facts__list dt { color: var(--yourhome-muted); font-size: .875rem; }
+.yourhome-property-facts__list dd { font-size: .9375rem; font-weight: 600; margin: 0; overflow-wrap: anywhere; text-align: end; }
+.yourhome-property-facts__address { margin: 0 0 1.5rem; overflow-wrap: anywhere; }
+.yourhome-property-map__frame { border: 1px solid var(--yourhome-border); border-radius: var(--yourhome-radius-s); display: block; height: clamp(300px, 45vw, 480px); width: 100%; }
+.yourhome-property-demo-note { color: var(--yourhome-muted); font-size: .8125rem; margin: .5rem 0 1rem; }
+.yourhome-property-detail__description .wp-block-post-content { overflow-wrap: anywhere; }
+.yourhome-property-detail__description .wp-block-post-content > :first-child { margin-top: 0; }
+.yourhome-property-detail__description .wp-block-post-content > :last-child { margin-bottom: 0; }
+.yourhome-property-detail__description :where(img, video, iframe) { max-width: 100%; }
+.yourhome-property-detail__description :where(.alignwide, .alignfull) { margin-inline: 0; width: 100%; }
+
+@media (max-width: 900px) {
+  .yourhome-property-facts { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 700px) {
+  .yourhome-property-detail__inner { padding-inline: var(--yourhome-header-inset-start, .8rem) var(--yourhome-header-inset-end, .8rem); }
+  .yourhome-property-overview__image { aspect-ratio: 4 / 3; }
+  .yourhome-property-overview__photos.has-gallery,
+  .yourhome-property-overview__photos.has-gallery:has(> :last-child) { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-template-rows: auto; }
+  .yourhome-property-overview__photos.has-gallery .yourhome-property-overview__media:first-child { grid-column: 1 / -1; grid-row: auto; }
+  .yourhome-property-overview__photos.has-gallery:has(> :last-child:nth-child(4)) > :last-child { grid-column: auto; }
+}

@@ -14,7 +14,9 @@
     "transition": { "type": "string", "default": "fade" },
     "showArrows": { "type": "boolean", "default": true },
     "showPagination": { "type": "boolean", "default": true },
-    "pauseOnHover": { "type": "boolean", "default": true }
+    "pauseOnHover": { "type": "boolean", "default": true },
+    "heightMode": { "type": "string" },
+    "minHeight": { "type": "number" }
   },
   "supports": {
     "align": ["wide", "full"],

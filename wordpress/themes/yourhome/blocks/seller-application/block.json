@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "yourhome/seller-application",
+  "version": "1.0.0",
+  "title": "Seller Application",
+  "category": "widgets",
+  "icon": "building",
+  "description": "An editable application form for property owners.",
+  "textdomain": "yourhome",
+  "attributes": {
+    "eyebrow": { "type": "string" },
+    "heading": { "type": "string" },
+    "intro": { "type": "string" },
+    "submitLabel": { "type": "string" },
+    "consentText": { "type": "string" },
+    "successHeading": { "type": "string" },
+    "successText": { "type": "string" },
+    "backgroundImageId": { "type": "number", "default": 0 },
+    "backgroundImageUrl": { "type": "string", "default": "" }
+  },
+  "supports": { "align": ["wide", "full"], "anchor": true, "html": false },
+  "render": "file:./render.php",
+  "style": "file:./style.css"
+}

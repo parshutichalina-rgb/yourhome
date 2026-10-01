@@ -1,0 +1,57 @@
+.wp-block-yourhome-seller-application {
+  background-color: #123c31;
+  background-image: linear-gradient(100deg, rgb(10 42 34 / 96%) 0%, rgb(18 60 49 / 88%) 46%, rgb(18 60 49 / 62%) 100%), var(--yourhome-seller-background);
+  background-position: center;
+  background-size: cover;
+  color: #fff;
+  margin: 0;
+  max-width: none;
+  padding: clamp(4rem, 8vw, 7rem) var(--yourhome-gutter);
+  width: 100%;
+}
+
+.yourhome-seller-application__inner {
+  display: grid;
+  gap: clamp(2rem, 6vw, 6rem);
+  grid-template-columns: minmax(0, .78fr) minmax(0, 1.22fr);
+  margin-inline: auto;
+  max-width: var(--wp--style--global--wide-size, 1280px);
+  min-width: 0;
+}
+
+.yourhome-seller-application__intro { min-width: 0; padding-top: clamp(.5rem, 2vw, 2rem); }
+.yourhome-seller-application__intro :where(h1, p) { color: inherit; }
+.yourhome-seller-application__intro h1 { font-size: clamp(3rem, 6vw, 5.8rem); line-height: .9; margin: .7rem 0 1.25rem; max-width: 10ch; }
+.yourhome-seller-application__intro > p:last-of-type { color: rgb(255 255 255 / 76%); font-size: 1.05rem; }
+.yourhome-seller-application .yourhome-eyebrow { color: #dce8df; }
+
+.yourhome-seller-application__steps { display: grid; gap: .75rem; list-style: none; margin: 2.5rem 0 0; padding: 0; }
+.yourhome-seller-application__steps li { align-items: center; display: flex; gap: .85rem; }
+.yourhome-seller-application__steps span { align-items: center; border: 1px solid rgb(255 255 255 / 28%); border-radius: 50%; color: #dce8df; display: inline-flex; font-size: .72rem; height: 2.35rem; justify-content: center; width: 2.35rem; }
+
+.yourhome-seller-application__panel { background: #f8f5ee; border-radius: var(--yourhome-radius-l); box-shadow: var(--yourhome-shadow-floating); color: var(--yourhome-ink); min-width: 0; padding: clamp(1.4rem, 3vw, 2.5rem); }
+.yourhome-seller-application__grid { display: grid; gap: 1.1rem; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.yourhome-seller-application__form label { display: grid; font-size: .82rem; font-weight: 750; gap: .45rem; letter-spacing: .01em; }
+.yourhome-seller-application__wide { grid-column: 1 / -1; }
+.yourhome-seller-application__form textarea { resize: vertical; }
+.yourhome-seller-application__consent { align-items: start; display: flex !important; font-weight: 500 !important; gap: .65rem !important; margin: 1.2rem 0; }
+.yourhome-seller-application__consent input { flex: none; margin-top: .2rem; }
+.yourhome-seller-application__form .wp-element-button { background: var(--yourhome-green); border: 0; border-radius: 999px; color: #fff; width: 100%; }
+.yourhome-seller-application__form .wp-element-button:hover { background: var(--yourhome-navy); }
+.yourhome-seller-application__notice { background: #f1e2c9; border-radius: var(--yourhome-radius-s); color: #704a19; padding: .9rem 1rem; }
+.yourhome-seller-application__success { align-content: center; min-height: 25rem; text-align: center; }
+.yourhome-seller-application__success > span { align-items: center; background: #dce8df; border-radius: 50%; display: inline-flex; font-size: 1.5rem; height: 4rem; justify-content: center; width: 4rem; }
+.yourhome-seller-application__success h2 { font-size: clamp(2rem, 4vw, 3.25rem); margin: 1.25rem auto .75rem; }
+.yourhome-seller-application__success p { margin-inline: auto; }
+.yourhome-seller-application__trap { left: -10000px; position: absolute; }
+
+@media (max-width: 800px) {
+  .yourhome-seller-application__inner { grid-template-columns: 1fr; }
+  .yourhome-seller-application__intro h1 { max-width: 12ch; }
+}
+
+@media (max-width: 520px) {
+  .yourhome-seller-application__grid { grid-template-columns: 1fr; }
+  .yourhome-seller-application__wide { grid-column: auto; }
+  .yourhome-seller-application__panel { border-radius: var(--yourhome-radius-m); padding: 1.15rem; }
+}

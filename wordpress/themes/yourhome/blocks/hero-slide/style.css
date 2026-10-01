@@ -1,13 +1,14 @@
 .wp-block-yourhome-hero-slide {
+  border-radius: 0;
   display: grid;
   grid-area: 1 / 1;
   margin-block: 0;
-  min-height: clamp(29rem, 68vh, 43rem);
+  min-height: var(--yourhome-hero-min-height, clamp(31rem, 72vh, 48rem));
   opacity: 0;
   overflow: hidden;
   pointer-events: none;
   position: relative;
-  transition: opacity 500ms ease, transform 500ms ease;
+  transition: opacity 950ms cubic-bezier(0.4, 0, 0.2, 1), visibility 0s linear 950ms;
   visibility: hidden;
 }
 
@@ -17,9 +18,16 @@
 .wp-block-yourhome-hero-slide.is-active {
   opacity: 1;
   pointer-events: auto;
+  transition-delay: 0s;
   visibility: visible;
   z-index: 1;
 }
+
+.wp-block-yourhome-hero-slide.is-active .yourhome-hero-slide__media { animation: yourhome-hero-image-in 1400ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.wp-block-yourhome-hero-slide.is-active .yourhome-hero-slide__content > * { animation: yourhome-hero-content-in 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.wp-block-yourhome-hero-slide.is-active .yourhome-hero-slide__content > :nth-child(2) { animation-delay: 90ms; }
+.wp-block-yourhome-hero-slide.is-active .yourhome-hero-slide__content > :nth-child(3) { animation-delay: 170ms; }
+.wp-block-yourhome-hero-slide.is-active .yourhome-hero-slide__content > :nth-child(4) { animation-delay: 250ms; }
 
 .yourhome-hero-slide__media,
 .yourhome-hero-slide__overlay,
@@ -29,10 +37,10 @@
   width: 100%;
 }
 
-.yourhome-hero-slide__media { object-fit: cover; }
+.yourhome-hero-slide__media { object-fit: cover; transform: scale(1.03); }
 
 .yourhome-hero-slide__overlay {
-  background: var(--yourhome-slide-overlay-color, #183249);
+  background: linear-gradient(90deg, var(--yourhome-slide-overlay-color, #123c31) 0%, color-mix(in srgb, var(--yourhome-slide-overlay-color, #123c31) 72%, transparent) 48%, transparent 100%);
   opacity: var(--yourhome-slide-overlay-opacity, 0.72);
 }
 
@@ -45,7 +53,7 @@
   justify-content: center;
   margin-inline: auto;
   max-width: none;
-  padding-block: clamp(3.5rem, 7vw, 6rem);
+  padding-block: clamp(4rem, 8vw, 7rem);
   padding-inline: 0;
   position: relative;
   text-align: var(--yourhome-slide-align, left);
@@ -74,21 +82,33 @@
 
 .yourhome-hero-slide__eyebrow {
   color: var(--yourhome-slide-accent, #eee9df);
-  font-size: 0.75rem;
+  align-items: center;
+  display: flex;
+  font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  margin: 0 0 0.75rem;
+  margin: 0 0 1rem;
   max-width: 100%;
   text-transform: uppercase;
 }
 
+.yourhome-hero-slide__eyebrow::before {
+  background: currentColor;
+  border-radius: 50%;
+  content: "";
+  height: 0.55rem;
+  margin-right: 0.6rem;
+  width: 0.55rem;
+}
+
 .yourhome-hero-slide__heading {
   color: inherit;
-  font-size: clamp(2.5rem, 5.5vw, 4.75rem);
+  font-size: clamp(2.8rem, 6.5vw, 6rem);
   letter-spacing: -0.025em;
   line-height: 1.02;
   margin: 0 0 1rem;
-  max-width: min(100%, 12ch);
+  max-width: min(100%, 10.5ch);
+  overflow-wrap: anywhere;
   text-wrap: balance;
 }
 
@@ -103,20 +123,36 @@
 .yourhome-hero-slide__button {
   background: var(--yourhome-slide-button-background, #f7f6f2);
   border: 1px solid transparent;
-  border-radius: var(--wp--custom--radius--small, 0.25rem);
+  border-radius: 999px;
   color: var(--yourhome-slide-button-text, #183249);
   display: inline-block;
   font-weight: 700;
-  padding: 0.75rem 1.15rem;
+  box-shadow: 0 12px 32px rgb(0 0 0 / 16%);
+  padding: 0.9rem 1.4rem;
   text-decoration: none;
-  transition: background-color 160ms ease;
+  transition: filter 180ms ease;
 }
 
-.yourhome-hero-slide__button:hover { filter: brightness(0.94); }
+.yourhome-hero-slide__button:hover { filter: brightness(0.98); }
 .yourhome-hero-slide__button:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; }
 
 @media (max-width: 700px) {
   .wp-block-yourhome-hero-slide { min-height: 32rem; }
-  .yourhome-hero-slide__content { padding-block: 3.5rem 6rem; }
+  .yourhome-hero-slide__content { min-width: 0; padding-block: 3.5rem 6rem; }
   .yourhome-hero-slide__heading { font-size: clamp(2.35rem, 12vw, 3.75rem); }
+}
+
+@keyframes yourhome-hero-image-in {
+  from { filter: saturate(0.82); transform: scale(1.1); }
+  to { filter: saturate(1); transform: scale(1.03); }
+}
+
+@keyframes yourhome-hero-content-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wp-block-yourhome-hero-slide.is-active .yourhome-hero-slide__media,
+  .wp-block-yourhome-hero-slide.is-active .yourhome-hero-slide__content > * { animation: none; }
 }

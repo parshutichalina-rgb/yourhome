@@ -1,9 +1,13 @@
-.wp-block-yourhome-background-link { background-image: linear-gradient(90deg, rgb(23 33 43 / 88%), rgb(23 33 43 / 32%)), var(--yourhome-background-link-image); background-position: center; background-size: cover; margin: 0; min-height: clamp(24rem, 50vw, 38rem); }
+.wp-block-yourhome-background-link { background-image: linear-gradient(90deg, rgb(18 60 49 / 92%), rgb(18 60 49 / 20%)), var(--yourhome-background-link-image); background-position: center; background-size: cover; border-radius: 0; margin: 0; min-height: clamp(28rem, 55vw, 44rem); overflow: hidden; width: 100%; }
 .yourhome-background-link__anchor { align-items: center; color: #fff !important; display: flex; min-height: inherit; padding-block: var(--yourhome-section-space); text-decoration: none; }
-.yourhome-background-link__content { display: grid; gap: 1rem; margin-inline: auto; width: min(calc(100% - 2 * var(--yourhome-gutter)), var(--wp--style--global--wide-size)); }
+.yourhome-background-link__content { display: grid; gap: 1.25rem; margin-inline: auto; padding-inline: 0; width: min(calc(100% - 2 * var(--yourhome-gutter)), var(--wp--style--global--wide-size)); }
 .yourhome-background-link__eyebrow { font-size: .8rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-.yourhome-background-link__heading { color: inherit; font-family: var(--wp--preset--font-family--display); font-size: clamp(2.25rem, 5vw, 4.5rem); font-weight: 600; letter-spacing: -.035em; line-height: 1.02; max-width: 15ch; }
-.yourhome-background-link__label { align-items: center; border-bottom: 2px solid currentColor; display: inline-flex; font-weight: 800; gap: .5rem; justify-self: start; padding-bottom: .25rem; }
+.yourhome-background-link__heading { color: inherit; font-family: var(--wp--preset--font-family--display); font-size: clamp(2.75rem, 6vw, 6rem); font-weight: 600; letter-spacing: -.05em; line-height: .96; max-width: 11ch; }
+.yourhome-background-link__label { align-items: center; background: var(--yourhome-canvas); border: 0; border-radius: 999px; box-shadow: 0 12px 32px rgb(0 0 0 / 18%); color: var(--yourhome-ink); display: inline-flex; font-weight: 800; gap: .65rem; justify-self: start; padding: .9rem 1.3rem; transition: background-color 180ms ease, box-shadow 180ms ease; }
+.yourhome-background-link__label > span { color: var(--yourhome-green); font-size: 1.15em; }
+.yourhome-background-link__anchor:hover .yourhome-background-link__label { background: #fff; box-shadow: 0 16px 38px rgb(0 0 0 / 24%); }
+.yourhome-background-link__anchor { transition: background-color 500ms ease; }
+.yourhome-background-link__anchor:hover { background: rgb(18 60 49 / 12%); }
 
 .editor-styles-wrapper .yourhome-background-link__eyebrow,
 .editor-styles-wrapper .yourhome-background-link__heading,

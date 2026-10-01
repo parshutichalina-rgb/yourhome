@@ -79,33 +79,20 @@ function yourhome_render_hero( array $attributes, string $content, WP_Block $blo
  * @param array<string, mixed> $attributes Block attributes.
  */
 function yourhome_get_hero_controls( array $attributes, int $slide_count ): string {
-	if ( 2 > $slide_count ) {
+	if ( 2 > $slide_count || ! (bool) ( $attributes['showPagination'] ?? true ) ) {
 		return '';
 	}
 
 	$output = '<div class="yourhome-hero__controls" aria-label="' . esc_attr__( 'Slider controls', 'yourhome' ) . '">';
-	if ( (bool) ( $attributes['showArrows'] ?? true ) ) {
-		$output .= '<button type="button" class="yourhome-hero__arrow" data-wp-on--click="actions.handlePrevious" aria-label="' . esc_attr__( 'Previous slide', 'yourhome' ) . '">←</button>';
+	$output .= '<div class="yourhome-hero__pagination">';
+	for ( $index = 0; $index < $slide_count; ++$index ) {
+		$output .= sprintf(
+			'<button type="button" class="yourhome-hero__dot" data-wp-context="%1$s" data-wp-on--click="actions.goTo" data-wp-bind--aria-current="state.isActiveDot" aria-label="%2$s"></button>',
+			esc_attr( wp_json_encode( array( 'targetIndex' => $index ) ) ),
+			esc_attr( sprintf( __( 'Show slide %d', 'yourhome' ), $index + 1 ) )
+		);
 	}
-
-	if ( (bool) ( $attributes['showPagination'] ?? true ) ) {
-		$output .= '<div class="yourhome-hero__pagination">';
-		for ( $index = 0; $index < $slide_count; ++$index ) {
-			$output .= sprintf(
-				'<button type="button" class="yourhome-hero__dot" data-wp-context="%1$s" data-wp-on--click="actions.goTo" data-wp-bind--aria-current="state.isActiveDot" aria-label="%2$s"></button>',
-				esc_attr( wp_json_encode( array( 'targetIndex' => $index ) ) ),
-				esc_attr( sprintf( __( 'Show slide %d', 'yourhome' ), $index + 1 ) )
-			);
-		}
-		$output .= '</div>';
-	}
-
-	$output .= '<span class="yourhome-hero__status" data-wp-bind--aria-live="state.liveMode" data-wp-text="state.statusText">1 / ' . esc_html( (string) $slide_count ) . '</span>';
-	$output .= '<button type="button" class="yourhome-hero__pause" data-wp-on--click="actions.togglePause" data-wp-bind--disabled="state.isPauseDisabled" data-wp-text="state.pauseLabel">' . esc_html__( 'Pause slides', 'yourhome' ) . '</button>';
-
-	if ( (bool) ( $attributes['showArrows'] ?? true ) ) {
-		$output .= '<button type="button" class="yourhome-hero__arrow" data-wp-on--click="actions.handleNext" aria-label="' . esc_attr__( 'Next slide', 'yourhome' ) . '">→</button>';
-	}
+	$output .= '</div>';
 
 	return $output . '</div>';
 }

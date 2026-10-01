@@ -33,7 +33,7 @@ if ( is_string( $action_query ) ) {
 $types   = array( 'apartment' => __( 'Apartment', 'yourhome' ), 'house' => __( 'House', 'yourhome' ), 'townhouse' => __( 'Townhouse', 'yourhome' ), 'land' => __( 'Land', 'yourhome' ), 'commercial' => __( 'Commercial', 'yourhome' ) );
 $pagination_base = str_replace( 999999999, '%#%', esc_url_raw( get_pagenum_link( 999999999 ) ) );
 ?>
-<section <?php echo get_block_wrapper_attributes( array( 'class' => 'yourhome-catalog' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> >
+<section <?php echo get_block_wrapper_attributes( array( 'id' => 'property-catalog', 'class' => 'yourhome-catalog' ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> >
 	<div class="yourhome-catalog__inner">
 	<?php if ( '' !== $eyebrow || '' !== $heading || '' !== $intro ) : ?><header class="yourhome-catalog__header"><?php if ( '' !== $eyebrow ) : ?><p class="yourhome-eyebrow"><?php echo esc_html( $eyebrow ); ?></p><?php endif; ?><?php if ( '' !== $heading ) : ?><h2><?php echo esc_html( $heading ); ?></h2><?php endif; ?><?php if ( '' !== $intro ) : ?><p><?php echo esc_html( $intro ); ?></p><?php endif; ?></header><?php endif; ?>
 	<form class="yourhome-catalog__filters" action="<?php echo esc_url( $catalog_url ); ?>" method="get">

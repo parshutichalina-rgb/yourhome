@@ -85,4 +85,19 @@ add_action(
 	}
 );
 
+add_action(
+	'wp_enqueue_scripts',
+	static function (): void {
+		$path = get_stylesheet_directory() . '/assets/js/theme-effects.js';
+
+		wp_enqueue_script(
+			'yourhome-theme-effects',
+			get_stylesheet_directory_uri() . '/assets/js/theme-effects.js',
+			array(),
+			file_exists( $path ) ? (string) filemtime( $path ) : null,
+			array( 'strategy' => 'defer', 'in_footer' => true )
+		);
+	}
+);
+
 add_action( 'customize_register', 'yourhome_register_customizer' );

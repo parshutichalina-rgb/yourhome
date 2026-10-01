@@ -1,13 +1,13 @@
-.wp-block-yourhome-property-catalog { padding-block: var(--yourhome-section-space); }
+.wp-block-yourhome-property-catalog { padding-block: clamp(2rem, 4vw, 3.5rem) var(--yourhome-section-space); }
 .yourhome-catalog__inner { margin-inline: auto; width: min(calc(100% - 2 * var(--yourhome-gutter)), var(--wp--style--global--wide-size)); }
-.yourhome-catalog__header { margin-bottom: 2rem; max-width: 750px; }
-.yourhome-catalog__header h2 { margin: 0; }
+.yourhome-catalog__header { margin-bottom: clamp(2rem, 5vw, 4rem); max-width: 780px; }
+.yourhome-catalog__header h2 { font-size: clamp(2.5rem, 5vw, 5rem); line-height: .98; margin: 0; }
 .yourhome-catalog__header > p:last-child { color: var(--yourhome-muted); }
-.yourhome-catalog__filters { align-items: end; background: var(--yourhome-surface); border: 1px solid var(--yourhome-border); border-radius: var(--yourhome-radius-l); display: grid; gap: 1rem; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 1.25rem; padding: 1.25rem; }
+.yourhome-catalog__filters { align-items: end; background: var(--yourhome-surface); border: 0; border-radius: 1.75rem; box-shadow: var(--yourhome-shadow-card); display: grid; gap: 1rem; grid-template-columns: repeat(4, minmax(0, 1fr)); margin-bottom: 1.75rem; padding: clamp(1.25rem, 3vw, 2rem); }
 .yourhome-catalog__filters label { display: grid; gap: .35rem; }
-.yourhome-catalog__filters label > span { font-size: .78rem; font-weight: 800; }
+.yourhome-catalog__filters label > span { color: var(--yourhome-green); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .yourhome-catalog__filter-actions { align-items: center; display: flex; gap: 1rem; grid-column: span 4; }
-.yourhome-catalog__summary { color: var(--yourhome-muted); margin-bottom: 1rem; }
+.yourhome-catalog__summary { color: var(--yourhome-muted); margin-bottom: 1.25rem; }
 .yourhome-catalog__pagination ul { display: flex; flex-wrap: wrap; gap: .4rem; justify-content: center; list-style: none; padding: 0; }
 .yourhome-catalog__pagination .page-numbers { align-items: center; border: 1px solid var(--yourhome-border); border-radius: var(--yourhome-radius-s); display: inline-flex; min-height: 2.5rem; padding: .35rem .75rem; }
 .yourhome-catalog__pagination .current { background: var(--yourhome-navy); border-color: var(--yourhome-navy); color: #fff; }

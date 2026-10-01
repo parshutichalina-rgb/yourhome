@@ -9,7 +9,7 @@
         { "name": "Navy", "slug": "navy", "color": "#29443E" },
         { "name": "Estate Green", "slug": "evergreen", "color": "#557568" },
         { "name": "Sage", "slug": "sage", "color": "#91A99F" },
-        { "name": "Ochre", "slug": "amber", "color": "#AA8250" },
+        { "name": "Sage Highlight", "slug": "amber", "color": "#BFD5C7" },
         { "name": "Sand", "slug": "sand", "color": "#EDE9DF" },
         { "name": "Slate Blue", "slug": "ultramarine", "color": "#607884" },
         { "name": "Muted Plum", "slug": "electric-purple", "color": "#7C7078" },
@@ -23,7 +23,7 @@
         { "name": "Foreground", "slug": "foreground", "color": "#24332E" },
         { "name": "Background", "slug": "background", "color": "#F3F5F1" },
         { "name": "Brand", "slug": "brand", "color": "#557568" },
-        { "name": "Accent", "slug": "accent", "color": "#AA8250" }
+        { "name": "Accent", "slug": "accent", "color": "#BFD5C7" }
       ]
     }
   },

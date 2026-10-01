@@ -11,6 +11,8 @@
   "attributes": {
     "eyebrow": { "type": "string" },
     "heading": { "type": "string" },
+    "linkLabel": { "type": "string" },
+    "linkUrl": { "type": "string" },
     "items": { "type": "array", "default": [] }
   },
   "supports": { "align": ["wide", "full"], "anchor": true, "html": false },

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "yourhome/contact-form",
+  "version": "1.0.0",
+  "title": "Contact Form",
+  "category": "widgets",
+  "icon": "email-alt",
+  "description": "An editable contact form that stores messages in WordPress administration.",
+  "textdomain": "yourhome",
+  "attributes": {
+    "eyebrow": { "type": "string" },
+    "heading": { "type": "string" },
+    "intro": { "type": "string" },
+    "detailsHeading": { "type": "string" },
+    "detailsText": { "type": "string" },
+    "email": { "type": "string" },
+    "phone": { "type": "string" },
+    "submitLabel": { "type": "string" },
+    "consentText": { "type": "string" },
+    "successHeading": { "type": "string" },
+    "successText": { "type": "string" }
+  },
+  "supports": { "align": ["wide", "full"], "anchor": true, "html": false },
+  "render": "file:./render.php",
+  "style": "file:./style.css"
+}
